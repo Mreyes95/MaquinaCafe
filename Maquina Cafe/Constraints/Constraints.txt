@@ -1,0 +1,1 @@
+No depositar las restricciones hasta no haber regenerado el proyecto final y comprobado la generación correcta del bitstream
