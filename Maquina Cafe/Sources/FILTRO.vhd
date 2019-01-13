@@ -1,3 +1,4 @@
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -36,19 +37,19 @@ for all: divisor_reloj use entity work.divisor_reloj(behavioral);
 signal p_i: std_logic;
 signal aux: std_logic_vector (entrada'range);
 begin
-	I_clk: divisor_reloj --1º
+	I_clk: divisor_reloj -- 1º.
 		generic map (tope=> 500000)  
 		port map(
 			clk => clk,
 			reset => '0',
 			clk_dividido => p_i);
 	fil: for i IN entrada'range GENERATE
-	I_antirrebote: antirrebote port map(  --2º
+	I_antirrebote: antirrebote port map(  -- 2º.
 			Bot => entrada(i),
 			clk_div=>p_i,
 			reset=> '0',
 			antirreb => aux(i));
-	I_flanco: flanco port map(   --3º
+	I_flanco: flanco port map(   -- 3º.
 			boton => aux(i),
 			clk => clk,
 			btn_out => salida(i));
